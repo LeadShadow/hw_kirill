@@ -171,7 +171,7 @@ None приводится к False;
         print("Hi Anonym!")
 
 ### Булевая алгебра 
-<a href='https://sites.google.com/site/programmirowanie/buleva-algebra'>Читать тут</a>
+<a href='https://sites.google.com/site/programmirowanie/buleva-algebra' target='_blank'>Читать тут</a>
 
 ### Тернарные операции
 
