@@ -22,15 +22,6 @@ def sanitize_phone_number(phone: str) -> str:
     return new_phone
 
 
-print(sanitize_phone_number('    +38(050) 123- 32- 34  '))  # 380501233234
-
-a = 'a423'
-if a.isdigit():
-    print('yes')
-else:
-    print('no')
-
-
 def check_phone(phone: str) -> bool:
     if phone.isdigit():
         return True
@@ -38,5 +29,5 @@ def check_phone(phone: str) -> bool:
         return False
 
 
-print(check_phone(sanitize_phone_number('    +38(050) 123- 32- 34  ')))
-
+if __name__ == "__main__":
+    print(check_phone(sanitize_phone_number('    +38(050) 123- 32- 34  ')))
