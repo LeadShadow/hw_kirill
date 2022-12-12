@@ -15,3 +15,12 @@ pay_system = {
 }
 
 card_number = ["5375414112345678", "4168757587879876", "216875758787987d"]
+
+
+def isvalid_card(card: str) -> bool:
+    return card.isdigit() and len(card) == 16
+
+
+for card in card_number:
+    string = 'Номер карти: {:<10} Платіжна система: {:^16} карточка віладна: {:>16}'
+    print(string.format(card, pay_system.get(int(card[0]), 'Unknown'), str(isvalid_card(card))))

@@ -24,5 +24,30 @@
 
 # print(is_spam_words("Ты лох.", ["лох"]))  # True
 # print(is_spam_words("Ты лох.", ["лох"], True))  # True
+import re
+
+
 def is_spam_words(text, spam_words, space_around=False):
-    pass
+    count = 0
+    if space_around is True:
+        text = text.lower()
+        text1 = re.sub('[,!.]', '', text)
+        for ch in text1.split():
+            for i in spam_words:
+                if ch == i:
+                    count += 1
+        if count > 0:
+            return True
+        else:
+            return False
+    else:
+        for i in spam_words:
+            if i in text:
+                return True
+            else:
+                return False
+
+
+if __name__ == "__main__":
+    print(is_spam_words("Ты лох.", ["лох"]))
+    print(is_spam_words("Ты лох.", ["лох"], True))

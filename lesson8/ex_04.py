@@ -12,3 +12,9 @@ string = "Нильс Бор родился в семье профессора ф
          "банкирской династии Raphael Raphael & sons[en][11]. Родители Бора поженились в 1881 году."
 
 #  Найти первые две буквы каждого слова
+result = re.findall(r'\b[А-Яа-яA-Za-z]{2}', string)
+print(result)
+
+
+result = re.findall(r'[0-9]{4}-[0-9]{4}', string)
+print(result)
