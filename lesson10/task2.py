@@ -17,5 +17,22 @@
 # функция total_salary возвращает значение типа float
 # для чтения файла функция total_salary использует только метод readline
 # мы пока не используем менеджер контекста with
-def total_salary(path):
+from pathlib import Path
+p = Path('C:/Users/pc/Desktop/заняття/hw_kirill/lesson10/test.txt')
 
+
+def total_salary(path: Path):
+    file = open(path, 'r', encoding='utf-8')
+    result = 0
+    while True:
+        line = file.readline()  # Alex Korp,3000
+        if not line:
+            break
+        else:
+            result += float(line.split(',')[1])
+    file.close()
+    return result
+
+
+if __name__ == "__main__":
+    print(total_salary(p))

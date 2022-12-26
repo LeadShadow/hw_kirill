@@ -8,8 +8,19 @@
 #  ['.git', '.idea', '.vscode', 'module-01', 'module-02', 'module-03', 'module-04', 'module-05',
 #  'module-06', 'module-07',
 #   'module-08', 'module-09', 'module-10', 'module-11', 'module-12'])
-def parse_folder(path):
+from pathlib import Path
+
+
+def parse_folder(path: Path):
     files = []
     folders = []
-
+    for el in path.iterdir():
+        if el.is_file():  # el -> C:/Users/pc/Desktop/заняття/hw_kiriill/lesson10/task1.py -> el.name -> task1.py
+            files.append(el.name)
+        elif el.is_dir():
+            folders.append(el.name)
     return files, folders
+
+
+if __name__ == "__main__":
+    print(parse_folder(Path('C:/Users/pc/Desktop/заняття/hw_kirill/lesson10')))

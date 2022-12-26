@@ -21,4 +21,16 @@
 # Robert Stivenson,28
 # Alex Denver,30
 # Drake Mikelsson,19
+from pathlib import Path
+
+
 def write_employees_to_file(employee_list, path):
+    file = open(path, 'w')
+    for dep in employee_list:
+        for worker in dep:
+            file.write(worker + '\n')
+    file.close()
+
+
+p = Path('.')
+write_employees_to_file([['Robert Stivenson,28', 'Alex Denver,30'], ['Drake Mikelsson,19']], p)
